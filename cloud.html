@@ -1,0 +1,76 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intel Soft</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+    <!-- NAVBAR -->
+    <include src="nav.html"></include> 
+
+    <!-- Header Section -->
+<div class="container-fluid px-lg-5 px-md-1 bg-about"  style="background-color:#0e1615;">
+<div class="container pt-5 px-lg-5 px-md-1">
+    <div class="row justify-content-center pt-5 ">
+      
+        <div class="col-md-4 order-lg-2 order-md-1 text-center">
+             <h1 class="header-text p-4 text-white rounded-pill">Igniting Cloud Transformation</h1>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Article Start -->
+<div class="conatiner-fluid px-lg-5 px-md-1">
+    <div class="container pt-5 px-lg-5 px-md-1">
+    <div class="row justify-content-center">   
+        <div class="col-md-9">
+        <h1 class="text-success py-4">Intelsoft's Expertise in Building Scalable, Reliable, and Accessible Applications</h1>
+        <p>In today's rapidly evolving business landscape, transitioning to the cloud is not merely an option—it's a strategic imperative. However, many businesses find themselves in the early stages of this transformation, seeking a trusted partner to guide them. Enter Intelsoft, a leader in crafting forward-thinking cloud solutions. With our expertise, we assist businesses in building applications that are not only scalable but also reliable and readily accessible. This ensures that you not only keep pace with the changing demands but also accelerate the value derived from your cloud investments.</p>
+        <h2 class="text-success py-4">Navigating the Early Stages of Cloud Transformation</h2>
+        <p>Embarking on the cloud journey can be a daunting task for many businesses. The intricacies and complexities of modern cloud environments require careful planning and execution. At Intelsoft, we understand these challenges intimately. We're here to facilitate a seamless transition, ensuring that you reap the full benefits of cloud technology.</p>
+        <h2 class="text-success py-4">Scalability: Future-Proofing Your Operations</h2>
+        <p>In a world of rapid change, scalability is paramount. As businesses grow, so do their computational and storage needs. Intelsoft specializes in crafting applications that scale with your business, allowing you to adapt to evolving demands without sacrificing performance. This scalability is not just a feature—it's a strategic advantage that future-proofs your operations.</p>
+        <h2 class="text-success py-4">Reliability: The Backbone of Your Cloud Ecosystem</h2>
+        <p>Downtime is no longer an option in today's digital landscape. Intelsoft places a premium on building applications that are not only robust but also highly reliable. Through rigorous testing and deployment practices, we ensure that your cloud-based applications operate seamlessly, providing uninterrupted service to your customers and stakeholders.</p>
+        <h2 class="text-success py-4">Availability: Ensuring Access Anytime, Anywhere</h2>
+        <p>In an interconnected world, accessibility is paramount. Intelsoft designs applications with high availability in mind. This means that your services remain accessible, even in the face of unexpected challenges. Whether it's a sudden surge in user traffic or a localized outage, you can trust that your applications will remain operational, keeping your business moving forward.</p>
+        <h2 class="text-success py-4">Accelerating Value in the Cloud Era</h2>
+        <p>The cloud is not just a technological shift; it's a catalyst for value creation. At Intelsoft, we recognize that the true potential of cloud transformation lies in its capacity to enhance efficiency, drive innovation, and ultimately, deliver tangible business value. Our applications are meticulously crafted to align with your strategic objectives, ensuring that every facet of your cloud journey contributes to your bottom line.</p>
+        <h2 class="text-success py-4">Partnering for Cloud Success</h2>
+        <p>As businesses navigate the early stages of cloud transformation, the right technology partner can make all the difference. At Intelsoft, we are committed to building applications that not only accelerate your cloud journey but also amplify the value you derive from it. With scalability, reliability, and availability at the core of our approach, we stand ready to propel your business towards a future of cloud-powered success. Embrace the future with Intelsoft, and let's revolutionize your cloud transformation together.</p>     
+        </div>
+    </div>
+</div>
+</div>
+
+   <!-- FOOTER -->
+    <include src="footer.html"></include> 
+
+
+</body>
+
+<!-- JS FILES -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+                //Initiate Animation AOS Object
+                AOS.init();
+
+                //JS Codes for include nav and footer html files
+                let includes = document.getElementsByTagName('include');                
+                for (var i = 0; i < includes.length; i++) {
+                let include = includes[i];
+                load_file(includes[i].attributes.src.value, function(text) 
+                {
+                    include.insertAdjacentHTML('afterend', text);
+                    include.remove();
+                });
+                }
+                function load_file(filename, callback) {
+                fetch(filename).then(response => response.text()).then(text => callback(text));
+                }
+ </script>
+
+</html>
