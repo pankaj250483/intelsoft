@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intel Soft</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+    <!-- NAVBAR -->
+    <include src="nav.html"></include> 
+
+    <!-- Header Section -->
+<div class="container-fluid px-lg-5 px-md-1 bg-legacy"  style="background-color:#0e1615;">
+<div class="container pt-5 px-lg-5 px-md-1">
+    <div class="row justify-content-center pt-5 ">
+      
+        <div class="col-md-8 order-lg-2 order-md-1 text-center">
+             <h1 class="header-text p-4 text-white rounded-pill" data-aos="fade-in">Legacy Application Modernization</h1>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Article Start -->
+<div class="conatiner-fluid px-lg-5 px-md-1">
+    <div class="container pt-5 px-lg-5 px-md-1">
+    <div class="row justify-content-center">   
+        <div class="col-md-9">
+        <h1 class="text-success py-4" data-aos="fade-up">Intelsoft: Revitalize Your Operations with Legacy Application Modernization</h1>
+        <p>In today's rapidly evolving technological landscape, relying on outdated software can expose your business to a host of risks. The costs associated with maintaining legacy applications can be a burden on resources. At Intelsoft, we specialize in breathing new life into legacy systems through comprehensive modernization strategies.</p>     
+        <h2 class="text-success py-4">Strategic Technical Analysis</h2>
+        <p>Our team of experts at Intelsoft doesn't just dive into modernization blindly. We begin by conducting a thorough technical assessment of your existing legacy application. This meticulous analysis allows us to identify pain points, potential areas for improvement, and the most effective modernization strategies.</p>
+        
+        <h2 class="text-success py-4">Harnessing Cutting-Edge Tools and Technologies</h2>
+        <p>Equipped with the latest tools and technologies, our experts at Intelsoft are adept at bringing legacy applications up to speed. We employ state-of-the-art methodologies to ensure that your software not only meets current industry standards but also future-proofs your operations.</p>
+
+        <h2 class="text-success py-4">Seamless Transition</h2>
+        <p>We understand the critical importance of a smooth transition during the modernization process. Our team at Intelsoft works diligently to ensure minimal disruption to your ongoing operations. Through meticulous planning and execution, we guarantee a seamless migration from the old to the new.</p>
+        
+        <h2 class="text-success py-4">Enhanced Efficiency and Security</h2>
+        <p>Modernizing legacy applications isn't just about aesthetics; it's about enhancing functionality, efficiency, and security. At Intelsoft, we go beyond surface-level improvements, implementing robust security measures and optimizing performance to meet the demands of today's competitive business landscape.</p>
+        
+        <h2 class="text-success py-4">Cost-Effective Solutions</h2>
+        <p>Maintaining outdated software can lead to skyrocketing costs. Intelsoft's modernization services offer a cost-effective alternative. By revitalizing your existing systems, we help you avoid the expenses associated with prolonged maintenance and security vulnerabilities.</p>
+        
+        <h2 class="text-success py-4">Future-Ready Operations</h2>
+        <p>With Intelsoft's legacy application modernization, you're not just addressing current challenges; you're preparing your business for the future. Our solutions are designed to adapt and scale alongside your evolving needs, ensuring that your operations remain agile and competitive.</p>
+        
+        <p>Don't let outdated software hold your business back. Partner with Intelsoft, where we blend technical expertise with a commitment to excellence, to embark on a transformative journey towards modernization. Contact us today to take the first step towards a more efficient, secure, and future-ready IT infrastructure.</p>        
+        
+        </div>
+    </div>
+</div>
+</div>
+
+   <!-- FOOTER -->
+    <include src="footer.html"></include> 
+
+
+</body>
+
+<!-- JS FILES -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+                //Initiate Animation AOS Object
+                AOS.init();
+
+                //JS Codes for include nav and footer html files
+                let includes = document.getElementsByTagName('include');                
+                for (var i = 0; i < includes.length; i++) {
+                let include = includes[i];
+                load_file(includes[i].attributes.src.value, function(text) 
+                {
+                    include.insertAdjacentHTML('afterend', text);
+                    include.remove();
+                });
+                }
+                function load_file(filename, callback) {
+                fetch(filename).then(response => response.text()).then(text => callback(text));
+                }
+ </script>
+
+</html>

@@ -65,6 +65,24 @@ body
     background-repeat: no-repeat;
 }
 
+.bg-saas
+{
+    min-height: 400px !important;
+    background-image: url('../images/saas.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-legacy
+{
+    min-height: 400px !important;
+    background-image: url('../images/legacy.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .header-text
 {
     background-color: rgba(0,0,0,0.5) !important;
