@@ -1,0 +1,133 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intel Soft</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+    <!-- NAVBAR -->
+    <include src="nav.html"></include> 
+
+    <!-- Header Section -->
+<div class="container-fluid px-lg-5 px-md-1 bg-contact"  style="background-color:#0e1615;">
+<div class="container pt-5 px-lg-5 px-md-1">
+    <div class="row justify-content-start pt-5 ">
+      
+        <div class="col-md-4 order-lg-2 order-md-1 text-center">
+             <h1 class="header-text p-4 text-white rounded-pill" data-aos="fade-in">Contact Us</h1>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Article Start -->
+<div class="conatiner-fluid px-lg-5 px-md-1">
+    <div class="container pt-5 px-lg-5 px-md-1">
+    <div class="row justify-content-center">   
+        <div class="col-md-4">
+            <h2 class="text-success">Address:</h2>
+            <p class="pb-4">30 Pentian Road,<br>Singapore 208099 </p>
+            <h2 class="text-success">Phone:</h2>
+            <p class="pb-4">+65 9271 1257</p>
+            <h2 class="text-success">Email:</h2>
+            <p class="pb-4">kavitha@intelsoft.live</p>
+         </div>
+
+ 
+        <div class="col-md-8">
+            <p>Our team provides complete support and maintenance for SaaS solutions to ensure that the application never deals with downtime and always remains up-to-date.</p>
+            <p>Feel free to write us: </p>
+            <form enctype="multipart/form-data" method="POST" onsubmit="event.preventDefault();">
+                <div class="mb-3">
+                    <label for="fullname" class="form-label">Full Name : </label>
+                    <input type="text" class="form-control" id="fullname">
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address : </label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="subject" class="form-label">Subject : </label>
+                  <input type="text" class="form-control" id="subject">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mesage : </label><br>
+                    <textarea class="form-control" rows="3" id="message">
+                        </textarea>
+                  </div>
+             
+                <button type="submit" id="but_upload" class="btn btn-primary">Submit</button>
+              </form>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12 border border-1 p-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4570.851700980074!2d103.85524899712455!3d1.3113244292361854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1697364951563!5m2!1sen!2sin" style="border:0;width: 100%; height: 450px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+            </div>
+    </div>
+</div>
+</div>
+
+   <!-- FOOTER -->
+    <include src="footer.html"></include> 
+
+
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#but_upload").click(function() {
+            var fd = new FormData();
+            fd.append('fullname', fullname.value);
+            fd.append('email', email.value);
+            fd.append('subject', subject.value);
+            fd.append('message', message.value);
+              
+            $.ajax({
+                url: 'sendmail-contact.php',
+                type: 'post',
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: function(response){
+                    if(response != 0){
+                       alert(response);
+                    }
+                    else{
+                        alert('Error Occured!!! Please try later or contact site admin.');
+                    }
+                },
+            });
+        });
+    });
+</script>  
+
+
+<!-- JS FILES -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+                //Initiate Animation AOS Object
+                AOS.init();
+
+                //JS Codes for include nav and footer html files
+                let includes = document.getElementsByTagName('include');                
+                for (var i = 0; i < includes.length; i++) {
+                let include = includes[i];
+                load_file(includes[i].attributes.src.value, function(text) 
+                {
+                    include.insertAdjacentHTML('afterend', text);
+                    include.remove();
+                });
+                }
+                function load_file(filename, callback) {
+                fetch(filename).then(response => response.text()).then(text => callback(text));
+                }
+ </script>
+
+</html>
