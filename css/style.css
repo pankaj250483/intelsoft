@@ -38,6 +38,15 @@ body
     background-repeat: no-repeat;
 }
 
+.bg-softwarei
+{
+    min-height: 350px !important;
+    background-image: url('../images/software-integration.jpg');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .bg-cloud
 {
     min-height: 350px !important;
@@ -47,14 +56,26 @@ body
     background-repeat: no-repeat;
 }
 
-.bg-softwarei
+.bg-pro
 {
     min-height: 350px !important;
-    background-image: url('../images/software-integration.jpg');
+    background-image: url('../images/pro-sytem.jpeg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.bg-learning
+{
+    min-height: 350px !important;
+    background-image: url('../images/learningsy1.jpeg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
 
 .bg-contact
 {
